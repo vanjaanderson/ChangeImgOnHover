@@ -1,0 +1,96 @@
+<!-- 
+**********************************************************************************
+	index.html
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	Author: Vanja Maria Anderson
+	Description: Demonstration of a jQuery plugin that changes images on hover.
+	Date: 2014-06-19
+	Version: 1.0
+	Website: http://vanjaanderson.com
+	Development: https://github.com/vanjaanderson/
+********************************************************************************** 
+-->
+<!DOCTYPE html>
+<head>
+	<title>Change Image On Hover &mdash; a jQuery-plugin</title>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.jpg" />
+	<link rel="shortcut icon"  href="img/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script src="script/changeImgOnHover.js"></script>
+</head>
+<body>
+	<div class='buttonhead'>
+		<button><a href='http://github.com/vanjaanderson/ChangeImgOnHover' target='_blank'>Download</a></button>
+	</div>
+	<div id='wrapper'>
+		<h1>jQuery plugin for changing images on hover</h1>
+		<p>
+			Why bother writing CSS or inline mouseover events for changing images on hovering over them? Now you can do exectly the same thing by implementing just a few rows of Javascript (see SCRIPT below)!
+		</p>
+
+		<h4>Instructions for use</h4>
+		<ol>
+			<figure id='image_dir'>
+				<img src='img/image.jpg' alt='Image directory' />
+				<figcaption>All images in the same place.</figcaption>
+			</figure>
+			
+			<li>Download and unzip the package from GitHub: <a href='http://github.com/vanjaanderson/ChangeImgOnHover' target='_blank'>ChangeImgOnHover</a>.</li>
+			<li>Put the rows of code in the bottom of your html-document or make sure DOM has been fully created before executing the jQuery-code. You can also force the browser to wait until the DOM is ready, by embedding the code: <span class='yellow'><code>$(document).ready(function() { <span class='gray small'>jQuery-plugin here</span> });</code></span>.</li>
+			<li>Create a hover variant for every image that you want to have hover effcet on. Extend the image name with <span class='yellow'>_hover</span>. All images should lay in the same directory (see image to the right).</li>
+			<li>In the HTML-code, the images must be assigned with the class name of&nbsp;&rdquo;hover&rdquo;.</li>
+			<li>Good luck and enjoy!</li>
+		</ol>
+
+<h4>Html</h4>
+<pre>
+&lt;img src='img/cat1.jpg' <span class='yellow'>class='hover'</span> alt='cat 1' />
+&lt;img src='img/cat2.jpg' <span class='yellow'>class='hover'</span> alt='cat 2' />
+&lt;img src='img/cat3.jpg' <span class='yellow'>class='hover'</span> alt='cat 3' />
+</pre>
+
+<h4>Script</h4>
+<pre>
+<span class='gray small'>01</span> (function($) {
+<span class='gray small'>02</span>   $.fn.changeImgOnHover = function() {
+<span class='gray small'>03</span>     $('.hover').each(function() {
+<span class='gray small'>04</span>       var imgName = $(this).attr('src').slice(0,-4);
+<span class='gray small'>05</span>       var extName = $(this).attr('src').split('.').pop();
+<span class='gray small'>06</span>       var hoverImg = imgName + '_hover.' + extName;
+<span class='gray small'>07</span>       var origImg = imgName + '.' + extName;
+<span class='gray small'>08</span>       $(this).mouseover(function() {
+<span class='gray small'>09</span>         $(this).attr('src', hoverImg);
+<span class='gray small'>10</span>       });
+<span class='gray small'>11</span>       $(this).mouseout(function() {
+<span class='gray small'>12</span>         $(this).attr('src', origImg);
+<span class='gray small'>13</span>       });
+<span class='gray small'>14</span>     });
+<span class='gray small'>15</span>   };
+<span class='gray small'>16</span> }) (jQuery);
+</pre>
+<p>The plugin is triggered by a single row of code outside the function: <code>$('.hover').changeImgOnHover();</code></p>
+
+		<h4>Working demo</h4>
+
+		<figure>
+			<img src='img/cat1.jpg' class='hover' alt='cat 1' />
+			<figcaption>Hover on me to change me!</figcaption>
+		</figure>
+		<figure>
+			<img src='img/cat2.jpg' class='hover' alt='cat 2' />
+			<figcaption>Hover on me!</figcaption>
+		</figure>
+		<figure>
+			<img src='img/cat3.jpg' class='hover' alt='cat 3' />
+			<figcaption>Am I cute?</figcaption>
+		</figure>
+
+		<div class='buttonrow'>
+			<span class='buttonside small'>Download version 1.0 today!</span> <button><a href='http://github.com/vanjaanderson/ChangeImgOnHover' target='_blank'>Download at GitHub</a></button> <span class='buttonside small'>Download version 1.0 today!</span>
+		</div>
+	</div>
+</body>
+</html>

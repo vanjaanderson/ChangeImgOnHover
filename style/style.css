@@ -1,0 +1,154 @@
+/*
+**********************************************************************************
+	style.css
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	Author: Vanja Maria Anderson
+	Description: Stylesheet for demonstration of my jQuery-plugin: changeImgOnHover.
+	Date: 2014-06-19
+	Version: 1.0
+	Website: http://vanjaanderson.com
+	Development: https://github.com/vanjaanderson/
+********************************************************************************** 
+*/
+body {
+	background-color: rgb(128,128,128);
+}
+
+h1,h2,h3,h4,h5,h5 {
+	font-family: 'Trebuchet MS';
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+h4 {
+	margin-bottom: -4px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+a, a:visited {
+	text-decoration: none;
+	font-family: Verdana, sans-serif;
+	font-size: 0.9em;
+	color: rgb(0,0,255);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+figure {
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+}
+
+figcaption {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+img {
+	-webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+	border: 6px solid rgb(255,255,255);
+	margin-right: 24px;
+}
+
+figure:first-of-type {
+	margin-top: 16px;
+}
+
+figure:last-of-type {
+	margin-right: -48px;
+}
+
+#image_dir {
+	float: right;
+	margin: 8px -16px 6px 32px;
+}
+
+#wrapper {
+	width: 696px;
+	margin: 64px auto;
+	padding: 32px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 16px;
+}
+
+ol,ul {
+	padding-left: 16px;
+}
+
+li + li {
+	margin-top: 12px;
+}
+
+button {
+	background: rgba(0,0,255,1);
+	border-radius: 4px;
+	border: none;
+	-webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	display: inline-block;
+	width: 270px;
+	margin: auto;
+}
+
+button a, button a:visited {
+	color: rgba(255,255,255,.8);
+	text-decoration: none;
+	font-size: 24px;
+}
+
+button:hover {
+	background: rgb(0,0,128);
+}
+
+button a:hover {
+	color: rgb(255,0,0);
+	text-decoration: none;
+}
+
+.gray {
+	color: rgb(180,180,180);
+}
+
+.small {
+	font-size: 0.9em;
+}
+
+.yellow {
+	background-color: rgb(255,255,0);
+}
+
+.buttonrow {
+	width: 720px;
+	margin: 48px auto 32px auto;
+}
+
+.buttonside {
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	font-style: italic;
+}
+
+.buttonhead {
+	width: 1000px;
+	position: absolute;
+	left: 50%;
+}
+
+.buttonhead button {
+	-webkit-transform: rotate(30deg);
+  	-moz-transform:    rotate(30deg);
+  	-ms-transform:     rotate(30deg);
+  	-o-transform:      rotate(30deg);
+  	transform:         rotate(30deg);
+  	margin-top: 16px;
+  	margin-left: 260px;
+  	width: auto;
+}
