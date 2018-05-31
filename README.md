@@ -43,7 +43,7 @@ The plugin is triggered by a single row of code outside the function: <code>$('.
 
 Working Demo
 ------------
-Visit webpage [ChangeImgOnHover](http://vanjaswebb.se/change-img-on-hover) for a working demo and more instructions.
+Visit webpage [ChangeImgOnHover](http://vanjaswebb.se/en/change-img-on-hover) for a working demo and more instructions.
 
 Changelog
 ---------
